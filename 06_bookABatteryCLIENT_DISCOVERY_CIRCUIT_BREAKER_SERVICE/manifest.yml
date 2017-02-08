@@ -1,0 +1,16 @@
+---
+applications:
+- name: 06-bookABatteryCLIENT_DISCOVERY_CIRCUIT_BREAKER_SERVICE
+  memory: 1024M
+  instances: 1
+  buildpack: java_buildpack
+  host: 06-bookABatteryCLIENT_DISCOVERY_CIRCUIT_BREAKER_SERVICE
+  domain: cfapps.io
+  path: target/bookABatteryCLIENT_DISCOVERY_CIRCUIT_BREAKER_SERVICE-1.4.0.RELEASE.jar
+  #services:
+  #    - 02-eureka-server
+
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    DEBUG: "true"
+    debug: "true"
