@@ -11,7 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.web.util.UriComponentsBuilder; 
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import it.luigibennardis.microservice.domain.Booking;
 
@@ -20,7 +22,7 @@ public class WebController {
 
 	@Autowired
 	DiscoveryClient discoveryClient;
-	
+	 
 	@Autowired
 	LoadBalancerClient loadBalancerClient;
 			
@@ -71,6 +73,11 @@ public class WebController {
 	       return new RestTemplate();
 	   }
 	
+	
+	
+	
+	
+	@HystrixCommand(fallbackMethod = "reliable")
 	@RequestMapping("/loadBalancerBooking")
 	public Booking[] getBooking(){
 	
@@ -91,5 +98,19 @@ public class WebController {
 		return listBooking; 
 		
 	}
+	
+	
+	public Booking[] reliable() {
+		
+		Booking[] listBooking = null;
+		
+		//***reliable 
+		System.out.println("");
+		System.out.println("reliable");
+		System.out.println("");
+				
+		return listBooking;
+	  }
+	
 		
 }
