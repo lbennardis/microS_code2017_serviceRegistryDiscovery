@@ -1,0 +1,13 @@
+
+CREATE USER 'bab_USER'@'localhost' IDENTIFIED BY 'bab_USER';
+CREATE DATABASE IF NOT EXISTS bookabattery_db_pws;
+GRANT ALL ON bookabattery_db_pws.* TO 'bab_USER'@'localhost';
+
+
+
+http://localhost:7111/prenotazioni/lista
+http://localhost:7111/batterie/search/findBystazione?stazione=STA002
+http://localhost:7111/prenotazioni/aggiungi/STAZ001/BATT001/ROMA/42/16
+ 
+
+ 

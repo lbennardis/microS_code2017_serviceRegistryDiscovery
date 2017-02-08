@@ -1,0 +1,12 @@
+MONGO DB 
+
+
+
+C:\runtime\mongodb-win32-i386-2.0.6\bin>
+
+
+mongod --dbpath=C:\runtime\mongodb-win32-i386-2.0.6\bin\data\db
+
+ 
+LMATERIALIZED VIEW
+http://localhost:7112//bookingInfoMaterializedView/list
