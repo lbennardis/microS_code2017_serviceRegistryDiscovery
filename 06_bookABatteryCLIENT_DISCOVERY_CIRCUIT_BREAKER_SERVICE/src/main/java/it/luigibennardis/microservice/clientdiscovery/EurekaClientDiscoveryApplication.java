@@ -7,6 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 @SpringBootApplication
+//***ADD ENABLED CIRCUITBREAKER HYSTRIX SUPPORT
 @EnableCircuitBreaker
 @EnableEurekaClient
 public class EurekaClientDiscoveryApplication {

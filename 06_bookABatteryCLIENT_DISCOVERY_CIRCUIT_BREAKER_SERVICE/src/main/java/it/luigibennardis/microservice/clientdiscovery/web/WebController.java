@@ -24,7 +24,7 @@ public class WebController {
 	DiscoveryClient discoveryClient;
 	 
 	@Autowired
-	LoadBalancerClient loadBalancerClient;
+	LoadBalancerClient loadBalancerClient; 
 			
 	@RequestMapping("/listDiscovery")
 	public String listDiscovery() {
@@ -77,6 +77,7 @@ public class WebController {
 	
 	
 	
+	//***ADD FALLBACKMETHOD - THIS WILL BE CALLED WHEN A FALLBACK WILL BE CAUSED (SERVICE UNAVAILABLE)
 	@HystrixCommand(fallbackMethod = "reliable")
 	@RequestMapping("/loadBalancerBooking")
 	public Booking[] getBooking(){
@@ -99,7 +100,7 @@ public class WebController {
 		
 	}
 	
-	
+	//***FALLBACKMETHOD - CALLED WHEN A FALLBACK WILL BE CAUSED (SERVICE UNAVAILABLE)
 	public Booking[] reliable() {
 		
 		Booking[] listBooking = null;
